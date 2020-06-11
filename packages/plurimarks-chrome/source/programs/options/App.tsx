@@ -6,7 +6,7 @@ import Context from './context';
 import Options from './containers/Options';
 
 import {
-    chromeStorage,
+    chromePromise,
 } from '../../services/utilities';
 
 
@@ -16,18 +16,14 @@ class App extends React.Component<any, any> {
         super(props);
 
         this.state = {
-            theme: themes.depict,
+            theme: themes.plurid,
             setTheme: this.setTheme,
-            options: {
-                getImageTextAtLoad: false,
-                transparentUI: true,
-            },
         };
     }
 
     async componentDidMount() {
-        const { theme } = await chromeStorage.get('theme');
-        const { options } = await chromeStorage.get('options');
+        const { theme } = await chromePromise.get('theme');
+        const { options } = await chromePromise.get('options');
 
         const selectedTheme = (themes as any)[theme];
 
@@ -52,7 +48,7 @@ class App extends React.Component<any, any> {
             theme: (themes as any)[theme],
         });
 
-        await chromeStorage.set({theme});
+        await chromePromise.set({theme});
     }
 }
 

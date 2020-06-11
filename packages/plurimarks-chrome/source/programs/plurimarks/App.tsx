@@ -6,7 +6,7 @@ import Context from './context';
 import Plurimarks from './Plurimarks';
 
 import {
-    chromeStorage,
+    chromePromise,
 } from '../../services/utilities';
 
 
@@ -16,13 +16,13 @@ class App extends React.Component<any, any> {
         super(props);
 
         this.state = {
-            theme: themes.depict,
+            theme: themes.plurid,
             setTheme: this.setTheme,
         };
     }
 
     async componentDidMount() {
-        const { theme } = await chromeStorage.get('theme');
+        const { theme } = await chromePromise.get('theme');
 
         const selectedTheme = (themes as any)[theme];
 
@@ -46,7 +46,7 @@ class App extends React.Component<any, any> {
             theme: (themes as any)[theme],
         });
 
-        await chromeStorage.set({theme});
+        await chromePromise.set({theme});
     }
 }
 

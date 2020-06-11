@@ -1,5 +1,32 @@
-// https://github.com/akiomik/chrome-storage-promise/blob/master/src/chrome-storage-promise.js
-export const chromeStorage = {
+export const chromePromise = {
+    getTree: (): Promise<any> => {
+        let promise = new Promise((resolve, reject) => {
+            chrome.bookmarks.getTree((items) => {
+                let err = chrome.runtime.lastError;
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(items);
+                }
+            });
+        });
+        return promise;
+    },
+    getBookmark: (
+        id: any,
+    ): Promise<any> => {
+        let promise = new Promise((resolve, reject) => {
+            chrome.bookmarks.get(id, (items) => {
+                let err = chrome.runtime.lastError;
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(items);
+                }
+            });
+        });
+        return promise;
+    },
     get: (keys: any): Promise<any> => {
         let promise = new Promise((resolve, reject) => {
             chrome.storage.sync.get(keys, (items) => {

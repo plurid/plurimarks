@@ -22,7 +22,7 @@ import {
 } from './styled';
 
 import {
-    chromeStorage,
+    chromePromise,
 } from '../../../../services/utilities';
 
 import client from '../../../../services/graphql/client';

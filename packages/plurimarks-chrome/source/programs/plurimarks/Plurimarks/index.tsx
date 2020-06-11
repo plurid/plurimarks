@@ -4,8 +4,6 @@ import React, {
     useEffect,
 } from 'react';
 
-import themes from '@plurid/plurid-themes';
-
 import {
     PluridApplication,
     PluridPlane,
@@ -22,17 +20,12 @@ import {
     StyledPlurimarks,
 } from './styled';
 
+import BookmarksPlane from '../components/BookmarksPlane';
+
 import {
-    chromeStorage,
+    chromePromise,
 } from '../../../services/utilities';
 
-import client from '../../../services/graphql/client';
-import {
-    CURRENT_OWNER,
-} from '../../../services/graphql/query';
-import {
-    LOGOUT,
-} from '../../../services/graphql/mutate';
 
 
 
@@ -52,9 +45,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
             component: {
                 kind: 'react',
                 element: () => (
-                    <div>
-                        bookmarks
-                    </div>
+                    <BookmarksPlane />
                 ),
             },
         },
@@ -63,7 +54,6 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
     const configuration: PluridPartialConfiguration = {
         theme: 'plurid',
         space: {
-            // opaque: false,
             center: true,
         },
         elements: {
@@ -86,9 +76,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
     };
 
     return (
-        <StyledPlurimarks
-            // theme={theme}
-        >
+        <StyledPlurimarks>
             <PluridApplication
                 planes={planes}
                 view={[

@@ -1,5 +1,5 @@
 import {
-    chromeStorage,
+    chromePromise,
 } from './chrome';
 
 import environment from './environment';
@@ -7,7 +7,7 @@ import environment from './environment';
 
 
 export {
-    chromeStorage,
+    chromePromise,
 
     environment,
 }
