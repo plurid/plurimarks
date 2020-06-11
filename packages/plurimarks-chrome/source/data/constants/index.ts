@@ -10,3 +10,7 @@ export const API_URI = environment.production
 
 
 export const PLURID_ACCOUNT_DOMAIN = 'https://account.plurid.com/depict';
+
+
+export const BOOKMARKS_BAR = 'Bookmarks Bar';
+export const OTHER_BOOKMARKS = 'Other Bookmarks';

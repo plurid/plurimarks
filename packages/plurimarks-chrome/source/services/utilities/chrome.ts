@@ -1,32 +1,65 @@
 export const chromePromise = {
-    getTree: (): Promise<any> => {
-        let promise = new Promise((resolve, reject) => {
-            chrome.bookmarks.getTree((items) => {
-                let err = chrome.runtime.lastError;
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(items);
-                }
+    bookmarks: {
+        getTree: (): Promise<any> => {
+            let promise = new Promise((resolve, reject) => {
+                chrome.bookmarks.getTree((items) => {
+                    let err = chrome.runtime.lastError;
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(items);
+                    }
+                });
             });
-        });
-        return promise;
-    },
-    getBookmark: (
-        id: any,
-    ): Promise<any> => {
-        let promise = new Promise((resolve, reject) => {
-            chrome.bookmarks.get(id, (items) => {
-                let err = chrome.runtime.lastError;
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(items);
-                }
+            return promise;
+        },
+        get: (
+            id: any,
+        ): Promise<any> => {
+            let promise = new Promise((resolve, reject) => {
+                chrome.bookmarks.get(id, (items) => {
+                    let err = chrome.runtime.lastError;
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(items);
+                    }
+                });
             });
-        });
-        return promise;
+            return promise;
+        },
+        search: (
+            query: string | chrome.bookmarks.BookmarkSearchQuery,
+        ): Promise<chrome.bookmarks.BookmarkTreeNode[]> => {
+            if (typeof query === 'string') {
+                const promise: Promise<chrome.bookmarks.BookmarkTreeNode[]> = new Promise((resolve, reject) => {
+                    chrome.bookmarks.search(query, (items) => {
+                        const error = chrome.runtime.lastError;
+                        if (error) {
+                            reject(error);
+                        } else {
+                            resolve(items);
+                        }
+                    });
+                });
+                return promise;
+            }
+
+            const promise: Promise<chrome.bookmarks.BookmarkTreeNode[]> = new Promise((resolve, reject) => {
+                chrome.bookmarks.search(query, (items) => {
+                    const error = chrome.runtime.lastError;
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(items);
+                    }
+                });
+            });
+            return promise;
+        },
     },
+
+
     get: (keys: any): Promise<any> => {
         let promise = new Promise((resolve, reject) => {
             chrome.storage.sync.get(keys, (items) => {
