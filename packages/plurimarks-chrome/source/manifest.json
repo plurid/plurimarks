@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "plurimarks",
+    "short_name" : "plurimarks",
+    "description": "explore browser bookmarks as a 3D structure",
+    "author": "Plurid, Inc.",
+    "version": "0.0.0",
+    "icons" : {
+        "16" : "assets/icons/icon16.png",
+        "32" : "assets/icons/icon32.png",
+        "48" : "assets/icons/icon48.png",
+        "128" : "assets/icons/icon128.png"
+    },
+    "permissions": [
+        "contextMenus",
+        "cookies",
+        "storage",
+        "tabs"
+    ],
+    "chrome_url_overrides" : {
+        "bookmarks": "bookmarks.html"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "browser_action" : {
+        "default_title" : "plurimarks",
+        "default_icon" : "assets/icons/icon.png",
+        "default_popup" : "popup.html"
+    },
+    "incognito": "spanning",
+    "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
+}
