@@ -14,7 +14,7 @@
     "permissions": [
         "cookies",
         "storage",
-        "tabs"
+        "bookmarks"
     ],
     "background": {
         "scripts": ["background.js"],
