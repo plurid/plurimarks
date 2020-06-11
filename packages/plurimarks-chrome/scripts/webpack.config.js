@@ -11,8 +11,8 @@ const { NODE_ENV = DEVELOPMENT } = process.env;
 
 const base = {
     entry: {
-        bookmarks: './source/programs/bookmarks/index.tsx',
-        popup: './source/programs/popup/index.tsx',
+        background: './source/programs/background/index.ts',
+        plurimarks: './source/programs/plurimarks/index.tsx',
         options: './source/programs/options/index.tsx',
     },
     resolve: {
@@ -44,14 +44,9 @@ const base = {
             ],
         }),
         new HtmlWebpackPlugin({
-            template: './source/programs/bookmarks/index.html',
-            chunks: ['bookmarks'],
-            filename: 'bookmarks.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: './source/programs/popup/index.html',
-            chunks: ['popup'],
-            filename: 'popup.html',
+            template: './source/programs/plurimarks/index.html',
+            chunks: ['plurimarks'],
+            filename: 'plurimarks.html',
         }),
         new HtmlWebpackPlugin({
             template: './source/programs/options/index.html',

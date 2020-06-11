@@ -12,13 +12,16 @@
         "128" : "assets/icons/icon128.png"
     },
     "permissions": [
-        "contextMenus",
         "cookies",
         "storage",
         "tabs"
     ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
     "chrome_url_overrides" : {
-        "bookmarks": "bookmarks.html"
+        "bookmarks": "plurimarks.html"
     },
     "options_ui": {
         "page": "options.html",
@@ -26,8 +29,7 @@
     },
     "browser_action" : {
         "default_title" : "plurimarks",
-        "default_icon" : "assets/icons/icon.png",
-        "default_popup" : "popup.html"
+        "default_icon" : "assets/icons/icon.png"
     },
     "incognito": "spanning",
     "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
