@@ -22,8 +22,8 @@ class App extends React.Component<any, any> {
     }
 
     async componentDidMount() {
-        const { theme } = await chromePromise.get('theme');
-        const { options } = await chromePromise.get('options');
+        const { theme } = await chromePromise.storage.sync.get('theme');
+        const { options } = await chromePromise.storage.sync.get('options');
 
         const selectedTheme = (themes as any)[theme];
 
@@ -48,7 +48,7 @@ class App extends React.Component<any, any> {
             theme: (themes as any)[theme],
         });
 
-        await chromePromise.set({theme});
+        await chromePromise.storage.sync.set({theme});
     }
 }
 

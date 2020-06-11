@@ -26,6 +26,18 @@ import {
     chromePromise,
 } from '../../../services/utilities';
 
+import {
+    plurimark,
+} from '../../../services/utilities';
+
+import {
+    ChromeBookmark,
+} from '../../../data/interfaces';
+
+import {
+    BOOKMARKS_BAR,
+    OTHER_BOOKMARKS,
+} from '../../../data/constants';
 
 
 
@@ -41,11 +53,13 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
 
     const planes: PluridPlane[] = [
         {
-            path: '/',
+            path: '/:id',
             component: {
                 kind: 'react',
-                element: () => (
-                    <BookmarksPlane />
+                element: (properties) => (
+                    <BookmarksPlane
+                        plurid={properties.plurid}
+                    />
                 ),
             },
         },
@@ -75,6 +89,26 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
         },
     };
 
+
+
+    /** effects */
+    useEffect(() => {
+        const loadData = async () => {
+            const bookmarksTree: ChromeBookmark[] = await chromePromise.bookmarks.getTree();
+
+            const bookmarksBar = plurimark.getNode(BOOKMARKS_BAR, bookmarksTree);
+            const otherBookmarks = plurimark.getNode(OTHER_BOOKMARKS, bookmarksTree);
+
+            console.log('bookmarksTree', bookmarksTree);
+            console.log('bookmarksBar', bookmarksBar);
+            console.log('otherBookmarks', otherBookmarks);
+        }
+
+        loadData();
+    }, []);
+
+
+    /** render */
     return (
         <StyledPlurimarks>
             <PluridApplication
