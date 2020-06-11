@@ -1,6 +1,10 @@
 import React from 'react';
 
 import {
+    PluridLink,
+} from '@plurid/plurid-react';
+
+import {
     StyledBookmarksPlane,
 } from './styled';
 
@@ -24,6 +28,17 @@ const BookmarksPlane: React.FC<BookmarksPlaneProperties> = (
     /** render */
     return (
         <StyledBookmarksPlane>
+            <PluridLink
+                path="/1"
+            >
+                Main Bookmarks
+            </PluridLink>
+
+            <PluridLink
+                path="/2"
+            >
+                Other Bookmarks
+            </PluridLink>
 
         </StyledBookmarksPlane>
     );

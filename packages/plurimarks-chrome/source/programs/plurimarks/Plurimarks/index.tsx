@@ -114,7 +114,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
             <PluridApplication
                 planes={planes}
                 view={[
-                    '/',
+                    '/:id',
                 ]}
                 configuration={configuration}
             />
