@@ -56,11 +56,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
             route: '/:id',
             component: {
                 kind: 'react',
-                element: (properties) => (
-                    <BookmarksPlane
-                        plurid={properties.plurid}
-                    />
-                ),
+                element: BookmarksPlane,
             },
         },
     ];
@@ -118,7 +114,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
                 view={[
                     '/dashboard',
                 ]}
-                configuration={configuration}
+                // configuration={configuration}
             />
         </StyledPlurimarks>
     );
