@@ -114,7 +114,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
                 view={[
                     '/dashboard',
                 ]}
-                // configuration={configuration}
+                configuration={configuration}
             />
         </StyledPlurimarks>
     );

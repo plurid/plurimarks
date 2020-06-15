@@ -29,13 +29,13 @@ const BookmarksPlane: React.FC<BookmarksPlaneProperties> = (
     return (
         <StyledBookmarksPlane>
             <PluridLink
-                path="/1"
+                route="/1"
             >
                 Main Bookmarks
             </PluridLink>
 
             <PluridLink
-                path="/2"
+                route="/2"
             >
                 Other Bookmarks
             </PluridLink>
