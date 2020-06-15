@@ -53,7 +53,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
 
     const planes: PluridPlane[] = [
         {
-            path: '/:id',
+            route: '/:id',
             component: {
                 kind: 'react',
                 element: (properties) => (
@@ -66,7 +66,9 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
     ];
 
     const configuration: PluridPartialConfiguration = {
-        theme: 'plurid',
+        global: {
+            theme: 'plurid',
+        },
         space: {
             center: true,
         },
@@ -114,7 +116,7 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
             <PluridApplication
                 planes={planes}
                 view={[
-                    '/:id',
+                    '/dashboard',
                 ]}
                 configuration={configuration}
             />
