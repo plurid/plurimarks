@@ -13,6 +13,21 @@ export const chromePromise = {
             });
             return promise;
         },
+        getSubTree: (
+            id: string,
+        ): Promise<any> => {
+            let promise = new Promise((resolve, reject) => {
+                chrome.bookmarks.getSubTree(id, (items) => {
+                    let err = chrome.runtime.lastError;
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(items);
+                    }
+                });
+            });
+            return promise;
+        },
         get: (
             id: any,
         ): Promise<any> => {
