@@ -88,7 +88,6 @@ const Plurimarks: React.FC<PlurimarksProperties> = () => {
     };
 
 
-
     /** effects */
     useEffect(() => {
         const loadData = async () => {

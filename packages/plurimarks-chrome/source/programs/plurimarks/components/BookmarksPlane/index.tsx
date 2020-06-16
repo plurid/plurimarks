@@ -22,7 +22,7 @@ const BookmarksPlane: React.FC<BookmarksPlaneProperties> = (
         plurid,
     } = properties;
 
-    console.log('plurid', plurid);
+    console.log('PLURID', plurid);
 
 
     /** render */
