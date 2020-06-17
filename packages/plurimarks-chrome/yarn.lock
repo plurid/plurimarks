@@ -1185,10 +1185,10 @@
   resolved "https://registry.yarnpkg.com/@plurid/plurid-data/-/plurid-data-0.1.154.tgz#c93f647e4bad0b0152837fd995f1a8a247f81c80"
   integrity sha512-LwGYMcvmMbHot8Ve3Bn70MacNA3w0UX25aWFRxOGrWuxJkJZ91ebN2Dq3pI22ifG95Th0TgB5krd8xJOvn+gJw==
 
-"@plurid/plurid-engine@^0.1.90":
-  version "0.1.90"
-  resolved "https://registry.yarnpkg.com/@plurid/plurid-engine/-/plurid-engine-0.1.90.tgz#111101388958a96c7f1324c25277e949c9cf5c3e"
-  integrity sha512-N49jCQePacbsLdh8v4emC5RwDo1gP16FLwahKNvXFSiWCdvW8I3NFBeTNxiqeKdoPVI17GUSqUd6s+yecSdYrQ==
+"@plurid/plurid-engine@^0.1.91":
+  version "0.1.91"
+  resolved "https://registry.yarnpkg.com/@plurid/plurid-engine/-/plurid-engine-0.1.91.tgz#57dd6244c0b16f3656fd37bff904cf0840264d0f"
+  integrity sha512-eLpSvCQewmwOfvTFGOmnIkLu5aJ58V+aokArgw/BpeD7xyjOifS6AT2BxIDECH/nB/ss/dj90ism+V8YcZeHcw==
 
 "@plurid/plurid-functions-react@^0.0.1":
   version "0.0.1"
@@ -1210,10 +1210,10 @@
   resolved "https://registry.yarnpkg.com/@plurid/plurid-pubsub/-/plurid-pubsub-0.1.8.tgz#0a63976f8d45e51b9e75e5445e4d70b210d568de"
   integrity sha512-CO+/lD2XbLAvjUFogG9CKUK7cVr5nZJuJ4mLssEtoiaA8u1MKWxJcPWn/SpKLXNTFDi7gj1bOCdK1OFxyWXKHw==
 
-"@plurid/plurid-react@^0.1.182":
-  version "0.1.182"
-  resolved "https://registry.yarnpkg.com/@plurid/plurid-react/-/plurid-react-0.1.182.tgz#70a18abbfd8bf6609940f908ad619f0ecdc10579"
-  integrity sha512-+DpT6fdk7FxKMj6MCjIyHozvS+qkw1eFXJi3aKYAjJvGDfAmk5SoAFkHCtTPROiae83Esa5h0nd1Eu1ENFxNmg==
+"@plurid/plurid-react@^0.1.183":
+  version "0.1.183"
+  resolved "https://registry.yarnpkg.com/@plurid/plurid-react/-/plurid-react-0.1.183.tgz#92e772967dfec05d622139d4ab9817819a36bef4"
+  integrity sha512-6ZewuvfSbapFqj3iv3gRCfXA5mKZ0XV2fZupcELVAtECmEHHxRSg0O8fVzgEex+d+1uhOdsydbQhFFaYTy/pNQ==
 
 "@plurid/plurid-themes@^0.1.26":
   version "0.1.26"
@@ -1394,10 +1394,18 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.36":
+"@types/react@*":
   version "16.9.36"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.36.tgz#ade589ff51e2a903e34ee4669e05dbfa0c1ce849"
   integrity sha512-mGgUb/Rk/vGx4NCvquRuSH0GHBQKb1OqpGS9cT9lFxlTLHZgkksgI60TuIxubmn7JuCb+sENHhQciqa0npm0AQ==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.9.38":
+  version "16.9.38"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.38.tgz#868405dace93a4095d3e054f4c4a1de7a1ac0680"
+  integrity sha512-pHAeZbjjNRa/hxyNuLrvbxhhnKyKNiLC6I5fRF2Zr/t/S6zS41MiyzH4+c+1I9vVfvuRt1VS2Lodjr4ZWnxrdA==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
